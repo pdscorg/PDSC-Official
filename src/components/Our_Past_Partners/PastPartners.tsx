@@ -31,7 +31,7 @@ return (
         <div className={styles.marquee}>
           <div className={styles.marqueeContent}>
             {looped.map((p, idx) => (
-              <div key={p.id + '-' + idx} className={styles.item}>
+              <div key={`${p.id}-${idx}`} className={styles.item}>
                 <img src={p.imgSrc} alt={p.name} className={styles.logo} />
               </div>
             ))}

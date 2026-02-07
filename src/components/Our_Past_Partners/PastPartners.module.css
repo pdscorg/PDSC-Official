@@ -1,4 +1,5 @@
 /* PastPartners.module.css */
+
 .wrapper {
   padding: 2rem 1rem;
   background: #2d2d2d;
@@ -8,114 +9,59 @@
 .title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color:#ffffff
+  color: #ffffff;
 }
 
-.marquee {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.marqueeContent {
-  display: flex;
-  /* width is twice the content so we can scroll half and loop */
-  width: calc(200%); 
-  /* adjust duration as needed */
-  animation: scroll 30s linear infinite;
-}
-
-.marqueeContent:hover {
-  animation-play-state: paused;
-}
-
-.item {
-  flex: 0 0 auto;
-  margin-right: 1rem;
-}
-
-.logo {
-  display: block;
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 2px;
-  transition: transform 0.3s ease;
-}
-
-.item:hover .logo {
-  transform: scale(1.05);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* move by half the marqueeContent width */
-    transform: translateX(-50%);
-  }
-}
-
-
-
-
+/* Marquee container */
 .marquee {
   overflow: hidden;
   width: 100%;
   margin: 32px 0;
 }
 
+/* Moving content */
 .marqueeContent {
   display: flex;
+  width: max-content;
   align-items: center;
-  animation: marquee 20s linear infinite;
+  animation: marquee 25s linear infinite;
   will-change: transform;
 }
 
+/* Pause animation on hover or focus */
 .marquee:hover .marqueeContent,
-.marquee:focus .marqueeContent {
+.marquee:focus-within .marqueeContent {
   animation-play-state: paused;
 }
 
+/* Each partner item */
 .item {
-  flex: 0 0 auto;
-  margin: 0 32px;
+  width: 320px; 
+  display: flex;
+  justify-content: center;
 }
 
+/* Partner logo */
 .logo {
-  width: 380px;
-  height: 200px;
-  object-fit: flex;
-  background: transparent;
-  border-radius: 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,);
-  padding: 10px;
-  transition: filter 0.3s, background 0.3s, transform 0.2s;
-  filter: grayscale(1) invert(1) brightness(1.2); /* Makes logo appear white */
-  display: block;
-}
-
-.logo:hover {
-  filter: none; /* Shows original color */
-  transform: scale(1.05);
-}
-
-/*.logo {
   width: 280px;
   height: 160px;
   object-fit: contain;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  padding: 0px;
-  transition: transform 0.2s;
+  background: transparent;
+  border-radius: 12px;
+  padding: 10px;
+  display: block;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  filter: grayscale(1) invert(1) brightness(1.2);
+  transition: filter 0.3s ease, transform 0.2s ease;
 }
 
+/* Hover effect */
 .logo:hover {
-  transform: scale(1.25);
+  filter: none;
+  transform: scale(1.05);
 }
-*/
 
 /* Marquee animation */
 @keyframes marquee {
@@ -126,4 +72,3 @@
     transform: translateX(-50%);
   }
 }
-
