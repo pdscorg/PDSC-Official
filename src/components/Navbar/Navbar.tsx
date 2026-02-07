@@ -65,7 +65,8 @@ const moveToPage = (page:string) => {
               <li><a style={{color:'white',cursor:'pointer'}} onClick={()=>moveToPage('code-of-conduct')}>Code of conduct</a></li>
             </ul>
           </li>
-          <li><a style={{color:'white',cursor:'pointer'}} onClick={()=>scrollToSection('section5')}>Programs</a></li>
+          <li><a style={{color:'white',cursor:'pointer'}} onClick={()=>scrollToSection('section4')}>Events</a></li>
+          <li><a style={{color:'white',cursor:'pointer'}} onClick={()=>scrollToSection('section46')}>Our Partners</a></li>
           <li><a style={{color:'white',cursor:'pointer'}} onClick={()=>scrollToSection('section6')}>Contact</a></li>
         </ul>
       </nav>

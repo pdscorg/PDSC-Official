@@ -14,6 +14,7 @@ import Navbar from './components/Navbar/Navbar'
 import MainBanner from './components/MainBanner/MainBanner'
 import Features from './components/Features/Features'
 import EventsComponent from './components/EventsComponent/EventsComponent'
+import PastPartners from './components/Our_Past_Partners/PastPartners'
 import JoinUs from './components/JoinUs/JoinUs'
 import GeneralMembersForm from './components/GeneralMembersForm/GeneralMembersForm'
 import PastBootcamps from './components/PastBootcamps/PastBootcamps'
@@ -41,6 +42,7 @@ function App({moveToSection}:{moveToSection:string}) {
       <Features />
       <JoinUs />
       <EventsComponent />
+      <PastPartners /> 
       <GeneralMembersForm />
       <PastBootcamps />
       <ReachOut />
