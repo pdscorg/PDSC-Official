@@ -136,7 +136,7 @@ const EventsComponent = () => {
                         <div className="card">
                             <div className="card-body">
                                 <h4 className="card-title">AI Workshop</h4>
-                                <small className="card-text mb-2 d-block">February 5th,6th & 8th, 2026</small>
+                                <small className="card-text mb-2 d-block">February 5th, 6th & 8th, 2026</small>
                                 <p className="card-text">Successfully conducted a 3-day AI & ML workshop introducing participants to the fundamentals of artificial intelligence and machine learning through interactive sessions, discussions, and practical insights.</p>
                             </div>
                         </div>
