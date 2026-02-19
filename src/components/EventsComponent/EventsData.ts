@@ -38,7 +38,7 @@ export const EventsData = [
     title: "Git and Github",
     date: "February 11th-12th, 2026",
     description:
-      "Successfully conducted a 2-day hands-on Git & GitHub workshop, guiding participants from version control basics to real-world collaboration, including branching, merging, pull requests, and team workflows.",
+      "Successfully conducted a 2-day hands-on Git & GitHub workshop in collaboration with IT Club, guiding participants from version control basics to real-world collaboration and team workflows.",
     completed: true,
   },
   {
