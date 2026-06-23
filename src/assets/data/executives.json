@@ -1,58 +1,65 @@
 [
-    {
-        "name": "Darshan Kr. Paudyal",
-        "post": "Coordinator",
-        "img" : "darshan.jpg",
-        "department" : "Computer Engineering",
-        "batch" : "2079 BS"
-    },
-    {
-        "name": "Ashish Pandey",
-        "post": "Secretary",
-        "img" : "ashish.png",
-        "department" : "Computer Engineering",
-        "batch" : "2079 BS"     
-    },
-    {
-        "name": "Adarsha Karki",
-        "post": "Finance Manager",
-        "img" : "aadarsha.png",
-        "department" : "Electrical Engineering",
-        "batch" : "2080 BS"
-    },
-    {
-        "name": "Yurisha Bajracharya",
-        "post": "Innovation Lead",
-        "img" : "yurisha.jpg",
-        "department" : "Computer Engineering",
-        "batch" : "2080 BS"
-    },
-    {
-        "name": "Asmit Pokhrel",
-        "post": "Event Manager",
-        "img" : "asmit.jpg",
-        "department" : "Electrical Engineering",
-        "batch" : "2080 BS"
-    },
-    {
-        "name": "Sunil Lamichhane",
-        "post": "Creative Lead",
-        "img" : "sunil.jpg",
-        "department" : "Computer Engineering",
-        "batch" : "2080 BS"
-    },
-    {
-        "name": "Saya Parajuli",
-        "post": "HR Manager",
-        "img" : "saya.jpg",
-        "department" : "Electrical Engineering",
-        "batch" : "2079 BS"
-    },
-    {
-        "name": "Hritesh Rai",
-        "post": "Marketing Manager",
-        "img" : "hritesh.jpg",
-        "department" : "Electrical Engineering",
-        "batch" : "2080 BS"
-    }
+  {
+    "name": "Yurisha Bajracharya",
+    "post": "Coordinator",
+    "img": "yurisha.jpg",
+    "department": "Computer Engineering",
+    "batch": "2080 BS"
+  },
+  {
+    "name": "Hritesh Rai",
+    "post": "Sub-Coordinator",
+    "img": "hritesh.jpg",
+    "department": "Electrical Engineering",
+    "batch": "2080 BS"
+  },
+  {
+    "name": "Sunil Lamichhane",
+    "post": "Secretary",
+    "img": "sunil.jpg",
+    "department": "Computer Engineering",
+    "batch": "2080 BS"
+  },
+  {
+    "name": "Asmit Pokhrel",
+    "post": "Finance Manager",
+    "img": "asmit.jpg",
+    "department": "Electrical Engineering",
+    "batch": "2081 BS"
+  },
+  {
+    "name": "Nabaraj Bhandari",
+    "post": "Innovation Lead",
+    "img": "nabaraj.jpg",
+    "department": "Computer Engineering",
+    "batch": "2081 BS"
+  },
+  {
+    "name": "Ritika KC",
+    "post": "HR Manager",
+    "img": "ritika.jpg",
+    "department": "Computer Engineering",
+    "batch": "2081 BS"
+  },
+  {
+    "name": "Anjila Bashyal",
+    "post": "Marketing Manager",
+    "img": "anjila.jpg",
+    "department": "Electronics Engineering",
+    "batch": "2081 BS"
+  },
+  {
+    "name": "Abishek Parajuli",
+    "post": "Event Manager",
+    "img": "abishek.jpg",
+    "department": "Computer Engineering",
+    "batch": "2081 BS"
+  },
+  {
+    "name": "Sumin Giri",
+    "post": "Creative Lead",
+    "img": "sumin.jpg",
+    "department": "Electrical Engineering",
+    "batch": "2081 BS"
+  }
 ]
