@@ -8,7 +8,7 @@ import { GoogleFormProvider, useGoogleForm } from "react-google-forms-hooks";
 import { GoogleForm } from "react-google-forms-hooks";
 import { FieldValues } from "react-hook-form";
 
-const isFormClosed = true;
+const isFormClosed = false;
 
 export default function GeneralMembersForm() {
   const formElement = useRef<HTMLFormElement | null>(null);
