@@ -8,7 +8,7 @@ import { GoogleFormProvider, useGoogleForm } from "react-google-forms-hooks";
 import { GoogleForm } from "react-google-forms-hooks";
 import { FieldValues } from "react-hook-form";
 
-const isFormClosed = true;
+const isFormClosed = false;
 
 export default function GeneralMembersForm() {
   const formElement = useRef<HTMLFormElement | null>(null);
@@ -60,7 +60,7 @@ export default function GeneralMembersForm() {
               >
                 Wanna be a part of it?
                 <em style={{ color: "#44aa70" }}>
-                  &nbsp; Application for the year 2025-2026 is open!
+                  &nbsp; Application for the year 2026-2027 is open!
                 </em>
               </h4>
             </div>
@@ -279,7 +279,7 @@ export default function GeneralMembersForm() {
                             <strong
                               style={{ color: "white", textAlign: "center" }}
                             >
-                              Application for the year 2025-2026 is Open!
+                              Application for the year 2026-2027 is Open!
                             </strong>
                             <button
                               disabled={isDisabled}
