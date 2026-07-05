@@ -37,8 +37,6 @@ Interactive login: `npx wrangler login`
 If you haven't configured Wrangler, `npm run deploy` may fail — run `npx wrangler whoami` to confirm you're logged in.
 
 
-Example of deployed page url: 
-`https://9ee976ff-pdscofficial.pdscofficial.workers.dev/`
 
 ## Need help?
 
