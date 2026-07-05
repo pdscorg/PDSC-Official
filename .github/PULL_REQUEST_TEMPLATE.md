@@ -28,9 +28,6 @@
 	- `npm run dev`
 	- Visit `/path` and verify `X` behavior
 
-**Breaking changes**
-- [ ] Yes — describe:
-- [ ] No
 
 **Screenshots / GIFs / Videos**
 - Paste images or links here.
