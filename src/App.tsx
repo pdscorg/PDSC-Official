@@ -34,7 +34,7 @@ function App({moveToSection}:{moveToSection:string}) {
     window.onload = () => {
       scrollToSection(moveToSection);
     }
-  },[])
+  },[moveToSection])
   return (
     <>
       <Navbar />

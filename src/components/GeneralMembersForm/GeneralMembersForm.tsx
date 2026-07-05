@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import "./GeneralMembersForm.css";
 import formJson from "../../assets/data/formData.json";
 import DropdownInput from "../../sub_components/FormComponents/DropDown";
@@ -45,7 +45,6 @@ function renderField(field: FormField) {
 }
 
 export default function GeneralMembersForm() {
-  const formElement = useRef<HTMLFormElement | null>(null);
   const [isDisabled, setIsDisabled] = useState(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
   const methods = useForm();
@@ -71,7 +70,7 @@ export default function GeneralMembersForm() {
         body: params,
       });
       setShowSuccessMsg(true);
-      formElement.current?.reset();
+      methods.reset();
     } catch (error) {
       console.error("Form submission failed:", error);
       alert("Form submission failed!");
@@ -120,7 +119,6 @@ export default function GeneralMembersForm() {
                     <form
                       onSubmit={methods.handleSubmit(onSubmit)}
                       style={{ position: "relative" }}
-                      ref={formElement}
                     >
                       <div className="row">
                         <div className="col-lg-6 col-sm-12 col-md-6 col-xs-12">
