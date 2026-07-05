@@ -18,7 +18,6 @@
 **Checklist**
 - [ ] Code builds and type-checks: `npm run build`
 - [ ] Linting passed: `npm run lint`
-- [ ] Tests added or updated (if applicable)
 - [ ] Documentation updated (README / CONTRIBUTING / other)
 - [ ] No sensitive data or secrets committed
 
