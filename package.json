@@ -1,7 +1,7 @@
 {
-  "name": "pdsc-2024",
+  "name": "pdsc-2026",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,25 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.2",
-    "bootstrap": "^5.3.3",
-    "jquery": "^3.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-google-forms-hooks": "^1.2.4",
-    "react-hook-form": "^7.51.4",
-    "react-router-dom": "^6.23.1"
+    "@fortawesome/fontawesome-free": "^7.3.0",
+    "bootstrap": "^5.3.8",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-hook-form": "^7.80.0",
+    "react-router-dom": "^7.18.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.23",
-    "@types/react-dom": "^18.3.7",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0"
-  }
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/node": "^24.13.2",
+    "eslint": "^10.5.0",
+    "@eslint/js": "^10.0.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.6.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.61.0",
+    "vite": "^8.1.0",
+    "@vitejs/plugin-react": "^6.0.2"
+  }  
 }

@@ -1,47 +1,87 @@
 import { useRef, useState } from "react";
 import "./GeneralMembersForm.css";
-import formJson from "./formData.json";
+import formJson from "../../assets/data/formData.json";
 import DropdownInput from "../../sub_components/FormComponents/DropDown";
 import LongAnswerInput from "../../sub_components/FormComponents/LongAnswer";
 import ShortAnswerInput from "../../sub_components/FormComponents/ShortAnswer";
-import { GoogleFormProvider, useGoogleForm } from "react-google-forms-hooks";
-import { GoogleForm } from "react-google-forms-hooks";
-import { FieldValues } from "react-hook-form";
+import { FormProvider, useForm, type FieldValues } from "react-hook-form";
 
 const isFormClosed = false;
+interface FormFieldOption {
+  label: string;
+}
+
+interface FormField {
+  label: string;
+  type: "SHORT_ANSWER" | "LONG_ANSWER" | "DROPDOWN";
+  id: string;
+  required: boolean;
+  options?: FormFieldOption[];
+}
+
+interface GoogleFormConfig {
+  action: string;
+  fields: FormField[];
+}
+
+const form = formJson as GoogleFormConfig;
+
+// Google's published-form action path already includes the "e/<id>" segment.
+const GOOGLE_FORM_SUBMIT_URL = `https://docs.google.com/forms/d/${form.action}/formResponse`;
+
+function renderField(field: FormField) {
+  const { id, type, label } = field;
+
+  switch (type) {
+    case "SHORT_ANSWER":
+      return <ShortAnswerInput id={id} key={id} placeholder={label} />;
+    case "LONG_ANSWER":
+      return <LongAnswerInput id={id} key={id} placeholder={label} />;
+    case "DROPDOWN":
+      return <DropdownInput id={id} key={id} placeholder={label} options={field.options ?? []} />;
+    default:
+      return null;
+  }
+}
 
 export default function GeneralMembersForm() {
   const formElement = useRef<HTMLFormElement | null>(null);
   const [isDisabled, setIsDisabled] = useState(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
-  const form = formJson as GoogleForm;
-  const methods = useGoogleForm({ form });
-  const onSubmitt = (data: FieldValues) => {
-    console.log("Form data being submitted:", data);
-    console.log("Form configuration:", form);
+  const methods = useForm();
+
+  const onSubmit = async (data: FieldValues) => {
     setIsDisabled(true);
-    methods
-      .submitToGoogleForms(data as FormData)
-      .then((response) => {
-        console.log("Form submission response:", response);
-        // Since form is working even when response is false, always show success
-        setIsDisabled(false);
-        setShowSuccessMsg(true);
-        formElement.current?.reset();
-      })
-      .catch((error) => {
-        console.error("Form submission failed:", error);
-        setIsDisabled(false);
-        alert("Form submission failed!");
+
+    const params = new URLSearchParams();
+    form.fields.forEach((field) => {
+      const value = data[field.id];
+      if (value !== undefined && value !== null) {
+        params.append(`entry.${field.id}`, String(value));
+      }
+    });
+
+    try {
+      // Google Forms doesn't send CORS headers, so the response is opaque
+      // ("no-cors"). A resolved fetch (no thrown network error) is the only
+      // signal available and is treated as a successful submission.
+      await fetch(GOOGLE_FORM_SUBMIT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: params,
       });
+      setShowSuccessMsg(true);
+      formElement.current?.reset();
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      alert("Form submission failed!");
+    } finally {
+      setIsDisabled(false);
+    }
   };
 
   return (
-    <section
-      className="section coming-soon"
-      data-section="section3"
-      id="application_form"
-    >
+    <section className="section coming-soon" data-section="section3" id="application_form">
       {isFormClosed ? (
         <div></div>
       ) : (
@@ -72,213 +112,39 @@ export default function GeneralMembersForm() {
                   <div className="top-content">
                     <h6>
                       Register and be a part of
-                      <em style={{ color: "#44aa70" }}>
-                        &nbsp;the journey&nbsp;{" "}
-                      </em>
+                      <em style={{ color: "#44aa70" }}>&nbsp;the journey&nbsp; </em>
                       where you learn leadership & other skills
                     </h6>
                   </div>
-                  <GoogleFormProvider {...methods}>
+                  <FormProvider {...methods}>
                     <form
-                      onSubmit={methods.handleSubmit(onSubmitt)}
+                      onSubmit={methods.handleSubmit(onSubmit)}
                       style={{ position: "relative" }}
                       ref={formElement}
                     >
                       <div className="row">
                         <div className="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                          {form.fields.slice(0, 3).map((field) => {
-                            const { id } = field;
-
-                            let questionInput = null;
-                            switch (field.type) {
-                              case "SHORT_ANSWER":
-                                questionInput = (
-                                  <ShortAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "LONG_ANSWER":
-                                questionInput = (
-                                  <LongAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "DROPDOWN":
-                                questionInput = (
-                                  <DropdownInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                            }
-                            return questionInput;
-                          })}
+                          {form.fields.slice(0, 3).map(renderField)}
                         </div>
                         <div className="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                          {form.fields.slice(3, 6).map((field) => {
-                            const { id } = field;
-
-                            let questionInput = null;
-                            switch (field.type) {
-                              case "SHORT_ANSWER":
-                                questionInput = (
-                                  <ShortAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "LONG_ANSWER":
-                                questionInput = (
-                                  <LongAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "DROPDOWN":
-                                questionInput = (
-                                  <DropdownInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                            }
-                            return questionInput;
-                          })}
+                          {form.fields.slice(3, 6).map(renderField)}
                         </div>
                       </div>
                       <div className="row mt">
                         <div className="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                          {form.fields.slice(6, 7).map((field) => {
-                            const { id } = field;
-
-                            let questionInput = null;
-                            switch (field.type) {
-                              case "SHORT_ANSWER":
-                                questionInput = (
-                                  <ShortAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "LONG_ANSWER":
-                                questionInput = (
-                                  <LongAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "DROPDOWN":
-                                questionInput = (
-                                  <DropdownInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                            }
-                            return questionInput;
-                          })}
+                          {form.fields.slice(6, 7).map(renderField)}
                         </div>
                         <div className="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                          {form.fields.slice(7, 8).map((field) => {
-                            const { id } = field;
-
-                            let questionInput = null;
-                            switch (field.type) {
-                              case "SHORT_ANSWER":
-                                questionInput = (
-                                  <ShortAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "LONG_ANSWER":
-                                questionInput = (
-                                  <LongAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "DROPDOWN":
-                                questionInput = (
-                                  <DropdownInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                            }
-                            return questionInput;
-                          })}
+                          {form.fields.slice(7, 8).map(renderField)}
                         </div>
                       </div>
                       <div className="row mt">
                         <div className="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                          {form.fields.slice(8, 9).map((field) => {
-                            const { id } = field;
-
-                            let questionInput = null;
-                            switch (field.type) {
-                              case "SHORT_ANSWER":
-                                questionInput = (
-                                  <ShortAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "LONG_ANSWER":
-                                questionInput = (
-                                  <LongAnswerInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                              case "DROPDOWN":
-                                questionInput = (
-                                  <DropdownInput
-                                    id={id}
-                                    key={id}
-                                    placeholder={field.label}
-                                  />
-                                );
-                                break;
-                            }
-                            return questionInput;
-                          })}
+                          {form.fields.slice(8, 9).map(renderField)}
                         </div>
                         <div className="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                           <fieldset className="form__submit__contents">
-                            <strong
-                              style={{ color: "white", textAlign: "center" }}
-                            >
+                            <strong style={{ color: "white", textAlign: "center" }}>
                               Application for the year 2026-2027 is Open!
                             </strong>
                             <button
@@ -291,17 +157,14 @@ export default function GeneralMembersForm() {
                             </button>
                           </fieldset>
                           {showSuccessMsg && (
-                            <div
-                              id="success-message"
-                              className="alert alert-success"
-                            >
+                            <div id="success-message" className="alert alert-success">
                               Your form has been submitted successfully!
                             </div>
                           )}
                         </div>
                       </div>
                     </form>
-                  </GoogleFormProvider>
+                  </FormProvider>
                 </div>
               </div>
             </div>
