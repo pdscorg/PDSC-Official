@@ -1,35 +1,45 @@
-import { useDropdownInput } from 'react-google-forms-hooks'
+import { useFormContext } from "react-hook-form";
 
-export default function DropdownInput({ id, placeholder }:{id: string, placeholder: string}) {
-  const { register, options } = useDropdownInput(id)
+interface DropdownOption {
+  label: string;
+}
+
+interface DropdownInputProps {
+  id: string;
+  placeholder: string;
+  options: DropdownOption[];
+}
+
+export default function DropdownInput({ id, placeholder, options }: DropdownInputProps) {
+  const { register } = useFormContext();
+
   return (
-        <fieldset>
-            <select
-            id="year"
-            style={ {
-                width: '100%',
-                height: '40px',
-                backgroundColor: 'rgba(250, 250, 250, 0.1)',
-                borderRadius: '7px',
-                border: 'none',
-                outline: 'none',
-                color: '#fff',
-                fontSize: '13px',
-                marginBottom: '20px',
-                letterSpacing: '0.5px',
-                }}
-            required
-            {...register()}
-            >
-            <option value=''>{placeholder}</option>
-            {options.map((o) => {
-            return (
-                <option key={o.label} value={o.label} style={{color: "#00080c"}}>
-                {o.label}
-                </option>
-            )
-            })}
-            </select>
-        </fieldset>
-  )
+    <fieldset>
+      <select
+        id={id}
+        style={{
+          width: "100%",
+          height: "40px",
+          backgroundColor: "rgba(250, 250, 250, 0.1)",
+          borderRadius: "7px",
+          border: "none",
+          outline: "none",
+          color: "#fff",
+          fontSize: "13px",
+          marginBottom: "20px",
+          letterSpacing: "0.5px",
+        }}
+        required
+        defaultValue=""
+        {...register(id)}
+      >
+        <option value="">{placeholder}</option>
+        {options.map((o) => (
+          <option key={o.label} value={o.label} style={{ color: "#00080c" }}>
+            {o.label}
+          </option>
+        ))}
+      </select>
+    </fieldset>
+  );
 }

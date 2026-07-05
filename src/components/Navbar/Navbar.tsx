@@ -4,32 +4,21 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
-  const [isActive,setIsActive] = useState(true);
-  const [changed, setChanged] = useState(false);
+  const [isActive, setIsActive] = useState(() => window.innerWidth >= 950);
   const navigator = useNavigate();
   const locator = useLocation();
 
   useEffect(() => {
-    if(window.innerWidth > 950 && changed === true){
-    setIsActive(true);
-    setChanged(false);
-    }
-    if(window.innerWidth < 950 && changed === false){
-      setIsActive(false);
-      setChanged(true);
-    }
-  },[])
+    const handleResize = () => {
+      setIsActive(window.innerWidth >= 950);
+    };
 
-  window.addEventListener('resize', () => {
-    if(window.innerWidth > 950 && changed === true){
-      setIsActive(true);
-      setChanged(false);
-    }
-    if(window.innerWidth < 950 && changed === false){
-      setIsActive(false);
-      setChanged(true);
-    }
-  })
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [])
   
   
 
