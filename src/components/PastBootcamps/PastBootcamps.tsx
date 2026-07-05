@@ -1,10 +1,9 @@
-import './PastBootcamps.css'
-import pythonLogo from '../../assets/images/Python_logo.png'
-
+import "./PastBootcamps.css";
+import pythonLogo from "../../assets/images/Python_logo.png";
 
 export default function PastBootcamps() {
-    return(
-            <section className="section video" data-section="section5">
+  return (
+    <section className="section video" data-section="section5">
       <div className="container">
         <div className="row">
           <div className="col-md-6 align-self-center">
@@ -22,27 +21,34 @@ export default function PastBootcamps() {
                   rel="nofollow"
                   href="https://www.youtube.com/channel/UCtBAL5IGsN6Hyk_deE2BQOw"
                   target="_parent"
-                  >Go to Youtube</a
                 >
+                  Go to Youtube
+                </a>
               </div>
             </div>
           </div>
           <div className="col-md-6">
             <article className="video-item">
-              <div className="video-caption">
-                <h4>Python Basics| PDSC Bootcamp Highlight</h4>
-              </div>
               <figure>
+                <img
+                  src={pythonLogo}
+                  alt="Python Basics bootcamp thumbnail"
+                />
                 <a
                   href="https://www.youtube.com/watch?v=Y-PGgjsdpLs"
                   className="play"
-                  ><img src={pythonLogo}
-                /></a>
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Play Python Basics bootcamp video"
+                />
               </figure>
+              <div className="video-caption">
+                <h4>Python Basics| PDSC Bootcamp Highlight</h4>
+              </div>
             </article>
           </div>
         </div>
       </div>
     </section>
-    )
+  );
 }
