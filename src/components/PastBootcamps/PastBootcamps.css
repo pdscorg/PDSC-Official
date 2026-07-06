@@ -65,11 +65,11 @@ section.video .left-content .main-button {
 .video-item figure .play {
   display: block;
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 0px;
+  right: 0px;
   width: 60px;
   height: 60px;
-  z-index: 12;
+  z-index: 11;
 }
 .video-item figure img {
   display: block;
@@ -84,8 +84,10 @@ section.video .left-content .main-button {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #44aa70 ;
+  background-color: #44aa70;
   pointer-events: none;
+  transition: background-color 0.15s ease-out,
+              scale 0.1s ease-out;
 }
 .video-item figure .play:after {
   content: '';
@@ -99,7 +101,10 @@ section.video .left-content .main-button {
   pointer-events: none;
 }
 .video-item figure .play:hover:before {
-  background-color: #2f7f55;
+  background-color: #2069E0;
+  scale: 1.05;
+  transition: background-color 0.2s ease-in,
+              scale 0.2s ease-in;
 }
 
 .video-item .video-caption {
