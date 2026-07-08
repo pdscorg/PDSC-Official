@@ -589,8 +589,7 @@ section.why-us {
   display: block;
   margin-bottom: 0.75em;
 }
-#tabs ul .ui-tabs-active {
-}
+
 #tabs ul .ui-tabs-active a {
   color: #44aa70 ;
 }
@@ -994,22 +993,7 @@ section.contact .row
 {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 100pt;
 }
-.person img
-{
-  height: 141pt;
-  width:  141pt;
-  border-radius: 50%;
-  position: relative;
-  z-index: 1;
-  border: 6px solid #44aa70;
-  /* display: inline; */
-  box-shadow: 0 0 20px #202020;
-  margin-bottom: 25px;
-
-}
-
 .hr-two
 {
     width: 152pt;
@@ -1625,9 +1609,6 @@ footer p a:hover {
   .heading {
       font-size: 2.5rem;
       line-height: 37px;
-    }
-    .person{
-      margin: 30px 0px;
     }
     section.contact .row {
       margin-bottom: 0px;

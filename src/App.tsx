@@ -21,6 +21,7 @@ import PastBootcamps from './components/PastBootcamps/PastBootcamps'
 import ReachOut from './components/ReachOut/ReachOut'
 import Footer from './components/Footer/Footer'
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const scrollToSection = (sectionDataAttribute:string) => {
   const element = document.querySelector(`[data-section="${sectionDataAttribute}"]`);
@@ -30,11 +31,22 @@ const scrollToSection = (sectionDataAttribute:string) => {
 };
 
 function App({moveToSection}:{moveToSection:string}) {
-  useEffect(()=>{
-    window.onload = () => {
-      scrollToSection(moveToSection);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      return;
     }
-  },[moveToSection])
+
+    const locationState = location.state as { scrollTo?: string } | null;
+    const targetSection = locationState?.scrollTo ?? moveToSection;
+
+    const timer = window.setTimeout(() => {
+      scrollToSection(targetSection);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [location.pathname, location.state, moveToSection]);
   return (
     <>
       <Navbar />

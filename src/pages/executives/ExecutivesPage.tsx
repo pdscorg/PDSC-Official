@@ -95,7 +95,7 @@ export default function ExecutivesPage() {
                     <a className="primary-action" href={`mailto:${executive.email}`}>
                       Contact via email
                     </a>
-                    <Link className="secondary-action" to="/">
+                    <Link className="secondary-action" to="/" state={{ scrollTo: 'team' }}>
                       Back to home
                     </Link>
                   </div>
@@ -110,7 +110,7 @@ export default function ExecutivesPage() {
                 <p className="executive-summary">
                   No executive profile matched this slug.
                 </p>
-                <Link className="primary-action" to="/">
+                <Link className="primary-action" to="/" state={{ scrollTo: 'team' }}>
                   Return to home
                 </Link>
               </div>
