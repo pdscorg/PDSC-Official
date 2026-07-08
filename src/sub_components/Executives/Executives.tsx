@@ -1,18 +1,20 @@
 import './Executives.css'
-import ExecutivesData from '../../assets/data/executives.json'
+import { Link } from 'react-router-dom'
+import ExecutivesData from '../../assets/data/executives_pages.json'
 
 type ExecutivesType = {
     img: string,
     name: string,
     post: string,
     department: string,
-    batch: string
+    batch: string,
+    slug: string
 }
 
 const SinglePerson = ({exec}:{exec: ExecutivesType}) => {   
   return (
-    <div className="person">
-        <img src={exec.img} alt={exec.name}/>
+    <Link className="person executive-card-link" to={`/${exec.slug}`}>
+        <img src={`/executives/${exec.img}`} alt={exec.name}/>
         <div className="shoulder">
         <p className="name">{exec.name}</p>
         <p className="position">{exec.post}</p>
@@ -20,8 +22,9 @@ const SinglePerson = ({exec}:{exec: ExecutivesType}) => {
         <p>Bachelors in {exec.department}</p>
         <p>Pulchowk Campus</p>
         <p>Batch {exec.batch}</p>
+        <span className="view-profile">View profile</span>
         </div>
-    </div>
+    </Link>
   );
 };
 

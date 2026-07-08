@@ -1560,7 +1560,7 @@ section.contact form button {
 footer {
     background-color: #2d2d2d;
     text-align: center;
-    margin-bottom: -133px;
+  margin-bottom: 0;
 }
 
 footer p {
@@ -1681,6 +1681,6 @@ footer p a:hover {
   cursor: none;
 }
 
-#direct_contact_section, a:hover {
+#direct_contact_section a:hover {
   opacity: 0.7;
 }
