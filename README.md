@@ -47,6 +47,20 @@ Our goal is simple: **transform students into industry-ready problem solvers** t
 
 ---
 
+## 🌱 Contributing & Development
+
+We welcome contributions to the website.instructions (local setup, scripts, linting, and deployment), see `CONTRIBUTING.md` in the project root.
+
+Quick start:
+
+1. Install dependencies: `npm install`
+2. Start dev server: `npm run dev`
+3. Run linter: `npm run lint`
+
+If you'd like help or want to propose a change, open an issue or a pull request following the guidelines in `CONTRIBUTING.md` and PR Template in `.github/PULL_REQUEST_TEMPLATE.md`.
+
+---
+
 ## 📬 Get Involved
 
 PDSC is open to all curious minds who want to build, collaborate, and lead. If you're looking to connect your academic learning to the real world — this is your place.
