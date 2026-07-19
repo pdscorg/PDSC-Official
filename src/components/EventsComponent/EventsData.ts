@@ -50,7 +50,7 @@ export const EventsData = [
   },
   {
     title: "Blockchain Workshop",
-    date: "July 14-17 & 20, 2025",
+    date: "July 14-17 & 20, 2026",
     description:
       "5-day Blockchain workshop introducing participants to blockchain fundamentals through interactive sessions in collaboration with iBriz Academy.",
     completed: true,
