@@ -1,6 +1,6 @@
 import './Executives.css'
 import { Link } from 'react-router-dom'
-import ExecutivesData from '../../assets/data/executives_pages.json'
+import ExecutivesData from '../../assets/data/executives.json'
 
 type ExecutivesType = {
     img: string,

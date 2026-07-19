@@ -2,64 +2,73 @@
   {
     "name": "Yurisha Bajracharya",
     "post": "Coordinator",
-    "img": "yurisha.jpg",
+    "img": "yurisha-bajracharya.jpg",
     "department": "Computer Engineering",
-    "batch": "2080 BS"
+    "batch": "2080 BS",
+    "slug": "yurisha-bajracharya"
   },
   {
     "name": "Hritesh Rai",
     "post": "Sub-Coordinator",
-    "img": "hritesh.jpg",
+    "img": "hritesh-rai.jpg",
     "department": "Electrical Engineering",
-    "batch": "2080 BS"
+    "batch": "2080 BS",
+    "slug": "hritesh-rai"
   },
   {
     "name": "Sunil Lamichhane",
     "post": "Secretary",
-    "img": "sunil.jpg",
+    "img": "sunil-lamichhane.jpg",
     "department": "Computer Engineering",
-    "batch": "2080 BS"
+    "batch": "2080 BS",
+    "slug": "sunil-lamichhane"
   },
   {
     "name": "Asmit Pokhrel",
     "post": "Finance Manager",
-    "img": "asmit.jpg",
+    "img": "asmit-pokhrel.jpg",
     "department": "Electrical Engineering",
-    "batch": "2080 BS"
+    "batch": "2080 BS",
+    "slug": "asmit-pokhrel"
   },
   {
     "name": "Nabaraj Bhandari",
     "post": "Innovation Lead",
-    "img": "nabaraj.jpg",
+    "img": "nabaraj-bhandari.jpg",
     "department": "Computer Engineering",
-    "batch": "2081 BS"
+    "batch": "2081 BS",
+    "slug": "nabaraj-bhandari"
   },
   {
     "name": "Ritika KC",
     "post": "HR Manager",
-    "img": "ritika.jpg",
+    "img": "ritika-kc.jpg",
     "department": "Computer Engineering",
-    "batch": "2081 BS"
+    "batch": "2081 BS",
+    "slug": "ritika-kc"
   },
   {
     "name": "Anjila Bashyal",
     "post": "Marketing Manager",
-    "img": "anjila.jpg",
+    "img": "anjila-bashyal.jpg",
     "department": "Electronics Engineering",
-    "batch": "2081 BS"
+    "batch": "2081 BS",
+    "slug": "anjila-bashyal"
   },
   {
     "name": "Abishek Parajuli",
     "post": "Event Manager",
-    "img": "abishek.jpg",
+    "img": "abishek-parajuli.jpg",
     "department": "Computer Engineering",
-    "batch": "2081 BS"
+    "batch": "2081 BS",
+    "slug": "abishek-parajuli"
   },
   {
     "name": "Sumin Giri",
     "post": "Creative Lead",
-    "img": "sumin.jpg",
+    "img": "sumin-giri.jpg",
     "department": "Electrical Engineering",
-    "batch": "2081 BS"
+    "batch": "2081 BS",
+    "slug": "sumin-giri"
   }
 ]
