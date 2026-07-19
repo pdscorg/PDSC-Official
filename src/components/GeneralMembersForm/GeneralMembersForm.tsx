@@ -6,7 +6,7 @@ import LongAnswerInput from "../../sub_components/FormComponents/LongAnswer";
 import ShortAnswerInput from "../../sub_components/FormComponents/ShortAnswer";
 import { FormProvider, useForm, type FieldValues } from "react-hook-form";
 
-const isFormClosed = false;
+const isFormClosed = true;
 interface FormFieldOption {
   label: string;
 }

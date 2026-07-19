@@ -3,7 +3,8 @@ import App from "./App.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import RedirectToPowerSeries from "./utils/RedirectToPowerSeries.tsx";
 import CodeOfConduct from "./pages/code_of_conduct/codeOfConduct.tsx";
-import GeneralMembersFormPage from "./pages/general_member_form/general_Member_Form.tsx";
+// import GeneralMembersFormPage from "./pages/general_member_form/general_Member_Form.tsx";
+import ExecutivesPage from "./pages/executives/ExecutivesPage.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -20,9 +21,13 @@ const router = createBrowserRouter([
     path: "/power-series",
     element: <RedirectToPowerSeries />,
   },
+  // {
+  //   path: "/general-member",
+  //   element: <GeneralMembersFormPage />,
+  // },
   {
-    path: "/general-member",
-    element: <GeneralMembersFormPage />,
+    path: "/:slug",
+    element: <ExecutivesPage />,
   },
   {
     path: "*",
